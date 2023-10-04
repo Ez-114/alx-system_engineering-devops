@@ -1,1 +1,1 @@
-This directory is for the shell IO Redirection project
+This is shell variables project
