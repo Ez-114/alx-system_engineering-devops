@@ -1,1 +1,1 @@
-This is shell variables project
+this is shell redirections and filters
