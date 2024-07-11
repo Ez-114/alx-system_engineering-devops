@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Does some stuff
+
+files=$(ls)
+for file in $files
+do
+	echo "${file#*-}"
+done
