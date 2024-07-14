@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# dispaly users info
 
 while IFS=: read -r usrname _ usrid _ _ homedir _;
 do
