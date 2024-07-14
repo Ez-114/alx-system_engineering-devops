@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# tells a story about the users of the system
+
+while IFS=":" read -r usrname paswd usrid gpid usrinf homedir shell
+do
+	echo "The user $usrname is part of the $gpid gang, lives in $homedir and rides $shell. $usrid's place is protected by the passcode $paswd, more info about the user here: $usrinf"
+done < /etc/passwd
