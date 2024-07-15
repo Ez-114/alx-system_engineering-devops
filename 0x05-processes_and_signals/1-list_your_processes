@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Show all process
+
+ps -eu --forest
