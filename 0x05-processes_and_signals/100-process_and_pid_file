@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# does some stuff
+
+# Create the PID file
+echo "$$" > /var/run/myscript.pid
+
+# Define the termination function
+function term_proc() {
+    echo "I hate the kill command"
+    rm -f /var/run/myscript.pid
+    exit
+}
+
+# Set traps for the signals
+trap term_proc SIGTERM SIGQUIT
+trap "echo Y U no love me?!" SIGINT
+
+# Main loop
+while true; do
+    echo "To infinity and beyond"
+    sleep 2
+done
