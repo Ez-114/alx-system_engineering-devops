@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Configures an Ubuntu server
 cp /etc/hosts ~/hosts.new
-sed 's/^127\.0\.0\.1\tlocalhost/127\.0\.0\.2\slocalhost/' /etc/hosts.new
+sed 's/^127\.0\.0\.1( |\t){1,10}localhost( |\t){0,10}/127\.0\.0\.2\tlocalhost/' /etc/hosts.new
 grep '.+facebook.com' || echo "8.8.8.8 facebook.com" >> /etc/hosts.new
 cp -f ~/hosts.new /etc/hosts
