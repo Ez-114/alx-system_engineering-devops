@@ -1,8 +1,15 @@
+"""
+0-subs module
+
+defines a funtion that returns the number of subscribers for a given subreddit.
+"""
+
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """Returns the number of subscribers for a given subreddit.
+    """
+    Returns the number of subscribers for a given subreddit.
 
     Args:
         subreddit (str): The name of the subreddit.
