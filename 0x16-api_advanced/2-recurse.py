@@ -12,26 +12,23 @@ def recurse(subreddit, hot_list=[], after=None):
         "User-Agent": "ChangeMeClient/0.1 by /u/Affectionate-Cry1141"
     }
     params = {"limit": 100, "after": after}
-    
+
     response = requests.get(
-                url, 
-                headers=headers, 
-                params=params, 
+                url,
+                headers=headers,
+                params=params,
                 allow_redirects=False)
-    
-    if response.status_code == 404:
-        return None
 
-    results = response.json().get("data")
-    
-    if not results:
-        return None
+    if response.status_code == 200:
+        for get_data in response.json().get("data").get("children"):
+            dat = get_data.get("data")
+            title = dat.get("title")
+            hot_list.append(title)
+        after = response.json().get("data").get("after")
 
-    hot_list.extend([child.get("data").get("title") for child in results.get("children")])
-
-    after = results.get("after")
-    
-    if after is not None:
-        return recurse(subreddit, hot_list, after)
+        if after is None:
+            return hot_list
+        else:
+            return recurse(subreddit, hot_list, after)
     else:
-        return hot_list
+        return None
