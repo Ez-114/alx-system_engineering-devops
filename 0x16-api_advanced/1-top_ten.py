@@ -26,7 +26,7 @@ def top_ten(subreddit):
 
     # Make a GET request to the Reddit API
     response = requests.get(
-                url, 
+                url,
                 headers=headers,
                 params={"limit": 10})
 
