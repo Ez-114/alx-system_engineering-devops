@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     # Request employee name
     with urlopen(emp_url) as response:
-        emp_name = json.loads(response.read()).get('name')
+        emp_usrname = json.loads(response.read()).get('username')
 
     # Request employee todos
     with urlopen(todo_url) as response:
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     for todo in todos:
         csv_data.append([
             emp_id,
-            emp_name,
+            emp_usrname,
             todo.get('completed'),
             todo.get('title')
         ])

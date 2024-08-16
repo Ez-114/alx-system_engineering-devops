@@ -49,8 +49,8 @@ if __name__ == "__main__":
             todo_titles.append(todo['title'])
 
     # Print formatted text
-    print("Employee {} is done with \
-    tasks({}/{}):".format(emp_name, total_completed, total_todos))
+    print("Employee {} is done with tasks({}/{}):".format(
+                        emp_name, total_completed, total_todos))
 
     for title in todo_titles:
         print("\t {}".format(title))
