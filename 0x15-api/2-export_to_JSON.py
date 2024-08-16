@@ -46,9 +46,9 @@ if __name__ == "__main__":
             "username": emp_username
         }
         tasks.append(task_info)
-    
+
     emp_tasks = {emp_id: tasks}
-    
+
     # Write data to a custom JSON file
     json_filename = f"{emp_id}.json"
     with open(json_filename, mode='w', encoding='utf-8') as json_file:
