@@ -1,6 +1,5 @@
 # Postmortem: Database Service Outage on 2024-08-18
 
----
 
 ## Issue Summary
 
