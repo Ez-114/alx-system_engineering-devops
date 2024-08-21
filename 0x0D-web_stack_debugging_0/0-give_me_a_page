@@ -8,7 +8,7 @@ container_id=$(docker run -p 8080:80 -d -it holbertonschool/265-0)
 sleep 5
 
 # Connect to the running container and execute commands
-docker exec -it $container_id bash -c "
+docker exec -it "$container_id" bash -c "
   apt-get update &&
   apt-get install apache2 -y &&
   echo 'Hello Holberton' > /var/www/html/index.html &&
