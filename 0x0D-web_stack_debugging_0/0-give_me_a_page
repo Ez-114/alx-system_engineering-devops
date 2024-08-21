@@ -1,0 +1,22 @@
+#!/bin/env bash
+# Debugs a server
+
+# Start the Docker container
+container_id=$(docker run -p 8080:80 -d -it holbertonschool/265-0)
+
+# Wait a moment to ensure the container is fully up
+sleep 5
+
+# Connect to the running container and execute commands
+docker exec -it $container_id bash -c "
+  apt-get update &&
+  apt-get install apache2 -y &&
+  echo 'Hello Holberton' > /var/www/html/index.html &&
+  service apache2 start
+"
+
+# Exit from the container
+docker exec -it $container_id bash -c "exit"
+
+# Verify the setup
+curl 0:8080
